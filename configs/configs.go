@@ -40,7 +40,7 @@ func initConfig() *AppConfig {
 	defaultConfig.Port = "8000"
 	defaultConfig.Database.Driver = getEnv("DRIVER", "mysql")
 	defaultConfig.Database.Name = getEnv("DB_NAME", "event")
-	defaultConfig.Database.Address = getEnv("ADDRESS", "localhost")
+	defaultConfig.Database.Address = getEnv("DB_ADDRESS", "localhost")
 	defaultConfig.Database.Port = "3306"
 	defaultConfig.Database.Username = getEnv("DB_USERNAME", "root")
 	defaultConfig.Database.Password = getEnv("DB_PASSWORD", "admin123")
@@ -48,6 +48,7 @@ func initConfig() *AppConfig {
 	defaultConfig.AWSRegion = getEnv("AWS_S3_BUCKET", "Error")
 	return &defaultConfig
 }
+
 func getEnv(key, fallback string) string {
 	if value, ok := os.LookupEnv(key); ok {
 		return value
