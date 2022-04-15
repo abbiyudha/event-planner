@@ -45,7 +45,7 @@ func initConfig() *AppConfig {
 	defaultConfig.Database.Username = getEnv("DB_USERNAME", "root")
 	defaultConfig.Database.Password = getEnv("DB_PASSWORD", "admin123")
 	defaultConfig.AWSRegion = getEnv("AWS_S3_REGION", "Error")
-	defaultConfig.AWSRegion = getEnv("AWS_S3_BUCKET", "Error")
+	defaultConfig.AWSBucket = getEnv("AWS_S3_BUCKET", "Error")
 	return &defaultConfig
 }
 
